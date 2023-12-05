@@ -89,3 +89,87 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: intent_0
+  examples: |
+    - Add Groups
+
+- intent: intent_1
+  examples: |
+    - Add a new group
+
+- intent: intent_2
+  examples: |
+    - Related Topics
+
+- intent: intent_3
+  examples: |
+    - Delete Groups
+
+- intent: intent_4
+  examples: |
+    - Edit Groups
+
+
+- intent: intent_0
+  examples: |
+    - Add Groups
+
+- intent: intent_1
+  examples: |
+    - Add a new group
+
+- intent: intent_2
+  examples: |
+    - Related Topics
+
+- intent: intent_3
+  examples: |
+    - Delete Groups
+
+- intent: intent_4
+  examples: |
+    - Edit Groups
+
+
+- intent: intent_0
+  examples: |
+    - Add Groups
+
+- intent: intent_1
+  examples: |
+    - Add a new group
+
+- intent: intent_2
+  examples: |
+    - Related Topics
+
+- intent: intent_3
+  examples: |
+    - Delete Groups
+
+- intent: intent_4
+  examples: |
+    - Edit Groups
+
+
+- intent: intent_0
+  examples: |
+    - Add Groups
+
+- intent: intent_1
+  examples: |
+    - Add a new group
+
+- intent: intent_2
+  examples: |
+    - Related Topics
+
+- intent: intent_3
+  examples: |
+    - Delete Groups
+
+- intent: intent_4
+  examples: |
+    - Edit Groups
+

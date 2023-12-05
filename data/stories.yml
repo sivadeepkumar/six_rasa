@@ -28,3 +28,33 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: story_0
+  steps:
+    - intent: intent_0
+    - action: utter_0
+
+
+- story: story_1
+  steps:
+    - intent: intent_1
+    - action: utter_1
+
+
+- story: story_2
+  steps:
+    - intent: intent_2
+    - action: utter_2
+
+
+- story: story_3
+  steps:
+    - intent: intent_3
+    - action: utter_3
+
+
+- story: story_4
+  steps:
+    - intent: intent_4
+    - action: utter_4
+
