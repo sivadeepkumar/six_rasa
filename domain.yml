@@ -1,36 +1,82 @@
-version: "3.1"
-
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- intent_0
+- intent_1
+- intent_2
+- intent_3
+- intent_4
 
 responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
+  utter_0:
+  - text: 'Groups are a very important part of your Asset Panda account as you wouldn''t
+      be able to do much without them. So let''s walk through the process of what
+      it takes to create and edit these groups.NOTE: Asset Panda allows for up to
+      10 groups per account.'
+  utter_1:
+  - text: 'To add a new group:1. Click to select your settingsicon, and then selectGroup
+      Settings.2. ClickAdd New Group.TheAdding Groups and their Fieldspage displays.3.
+      Enter theName(or title) for your Group.4. SelectYesorNoforInclude attachments
+      in replication.SelectingYesensures that attachments will be replicated alongside
+      selected fields.5. SelectYesorNoforIs a people group. SelectingYeslinks users
+      to records. This setting should only be used for people groups such as Staff
+      and/or Employees, and for limiting permissions based on people.6. Select theRequire
+      Comment when deleting objectssetting if you wish to require a comment when an
+      object is deleted. This setting creates both an extra step and accountability
+      when records are deleted by forcing a user to enter a comment when deleting
+      a record from a group. The comment can then be viewed within account Change
+      Logs.7. Select theSave GPS coordinates when saved from mobileif you wish to
+      provide a user with permissions to log GPS coordinates from within their mobile
+      settings. This will log the GPS coordinates within the record.8. Selecting theShow
+      Linked Objectsbox enables aLinkedtab to display to the left of all records within
+      the Group.This option allows you to view any linked records through Group List
+      fields from within other Groups. (Example: Your Work Orders group contains an
+      Asset group list that allows you to link a work order to an asset. Selecting
+      theShow Linked Objectsoption will allow you to see the work order(s) linked
+      to this asset within theLinkedtab displayed within the record details.)9. Selecting
+      theShow Associated Objectsbox enables anAssociatedtab to display the left of
+      all records within the Group.This option allows you to view any correlated records
+      through Group List field types. (Example: You have a Group List field in your
+      assets titled, "Locations." This field will connect your record to the Location
+      listed on the asset record. You can then see the connection through theAssociatedtab
+      to the left of the record detail view.)10. Select the attachment types you wish
+      to attach to the records within your group. (Check out theRelated Topicssection
+      below to learn more about our attachment types.)Note that fields must be created
+      and user permissions must be set to complete the set-up of your groups (and
+      before you can actually edit your new group). (SeeAdd New FieldsandCustom Permissionsfor
+      assistance.)'
+  utter_2:
+  - text: "Add GroupsAdd New FieldsCustom PermissionsAttachmentsImagesDocuments, Voice
+      Notes, and Videos"
+  utter_3:
+  - text: "To delete an existing group:1.Navigate to yourGroupspage, and then select
+      theDeletelink of the group you wish to delete.2. SelectDelete Groupif you are
+      certain you wish to delete your group."
+  utter_4:
+  - text: "To edit or modify an existing group:1.Navigate to yourGroupspage, and then
+      select theEditlink of the group you wish to modify.TheEditing Groups and their
+      Fieldspage displays, allowing you to make all desired edits.Refer toAdd New
+      Groupsfor more information on the fields contained within theEditing Groups
+      and their Fieldspage."
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
   utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
+  - text: Did that help you?
   utter_goodbye:
-  - text: "Bye"
-
+  - text: Bye
+  utter_greet:
+  - text: Hey! How are you?
+  utter_happy:
+  - text: Great, carry on!
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
+  - text: I am a bot, powered by Rasa.
 session_config:
-  session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
-- intent_0:
+  session_expiration_time: 60
+version: '3.1'

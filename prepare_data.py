@@ -30,7 +30,7 @@ for heading, examples in qna_data.items():
     utter = "utter_" + str(count)
     examples = "".join(examples)
     
-    responses_data[utter] = [{"text": f'"{examples}"'}]
+    responses_data[utter] = [{"text": examples}]
 
 # stories = {
 #     "stories": [
@@ -75,36 +75,6 @@ with open(nlu_file_path, "a") as file:
                 file.write(f"    - {line}\n")
 
 
-existing_domain_file_path = "domain.yml"
-with open(existing_domain_file_path, "r") as existing_file:
-    existing_domain_data = yaml.safe_load(existing_file)
-
-# Add new intents to the existing domain data
-for item in training_data["nlu"]:
-    intent_name = item["intent"]
-    existing_domain_data["intents"].append(intent_name)
-    print(intent_name,end='        ')
-# Add new responses to the existing domain data
-for utter, response_data in responses_data.items():
-    existing_domain_data["responses"][utter] = response_data
-
-# Append the new intents and responses to the existing domain.yml file
-with open(existing_domain_file_path, "a") as file:
-    file.write("\n")
-    for item in training_data["nlu"]:
-        intent_name = item["intent"]
-        examples = item["examples"]
-        
-        # Write the intent name and examples to domain.yml
-        file.write(f'- {intent_name}:\n')
-        for example in examples:
-            file.write(f'  - {example}\n')
-    
-    for utter, response_data in responses_data.items():
-        file.write(f'\n  {utter}:\n')
-        for response in response_data:
-            text_value = response["text"]
-            file.write(f'    - text: {text_value}\n')
 
 
 
@@ -145,22 +115,58 @@ with open(stories_file_path, "a") as file:
 
 
 
-# #domain file 
+#domain file 
 
-# # Load existing domain data
-# with open("domain.yml", "r") as file:
-#     domain_data = yaml.safe_load(file)
+# Load existing domain data
+with open("domain.yml", "r") as file:
+    domain_data = yaml.safe_load(file)
 
-# # Add new intents
-# intents_from_nlu = [item["intent"] for item in training_data["nlu"]]
-# domain_data["intents"].extend(intents_from_nlu)
+# Add new intents
+intents_from_nlu = [item["intent"] for item in training_data["nlu"]]
+domain_data["intents"].extend(intents_from_nlu)
 
-# # Add new responses
+# Add new responses
 
 
-# domain_data["responses"].update(responses_data)
+domain_data["responses"].update(responses_data)
 
-# # Write the updated domain data back to the file
-# with open("domain.yml", "w") as file:
-#     yaml.dump(domain_data, file, default_flow_style=False)
+# Write the updated domain data back to the file
+with open("domain.yml", "w") as file:
+    yaml.dump(domain_data, file, default_flow_style=False)
 
+
+
+
+
+
+
+# existing_domain_file_path = "domain.yml"
+# with open(existing_domain_file_path, "r") as existing_file:
+#     existing_domain_data = yaml.safe_load(existing_file)
+
+# # Add new intents to the existing domain data
+# for item in training_data["nlu"]:
+#     intent_name = item["intent"]
+#     existing_domain_data["intents"].append(intent_name)
+#     print(intent_name,end='        ')
+# # Add new responses to the existing domain data
+# for utter, response_data in responses_data.items():
+#     existing_domain_data["responses"][utter] = response_data
+
+# # Append the new intents and responses to the existing domain.yml file
+# with open(existing_domain_file_path, "a") as file:
+#     file.write("\n")
+#     for item in training_data["nlu"]:
+#         intent_name = item["intent"]
+#         examples = item["examples"]
+        
+#         # Write the intent name and examples to domain.yml
+#         file.write(f'- {intent_name}:\n')
+#         for example in examples:
+#             file.write(f'  - {example}\n')
+    
+#     for utter, response_data in responses_data.items():
+#         file.write(f'\n  {utter}:\n')
+#         for response in response_data:
+#             text_value = response["text"]
+#             file.write(f'    - text: {text_value}\n')
